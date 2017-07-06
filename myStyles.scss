@@ -15,6 +15,14 @@ html {
     font: 100% $fontStack;
     color: $fontColor;
 
+    h1 {
+      font-size: 4vh;
+    }
+
+    p {
+      font-size: 2vh;
+    }
+
     #main {
         text-align: center;
     }
@@ -22,17 +30,21 @@ html {
     #result {
         font-weight: bold;
         border: 2px solid $dodgerBlue;
-        margin: 0 25%;
+        margin: 0 20%;
+
+        p {
+            font-size: 2vh;
+        }
     }
 
     input {
-        font-size: 16px;
+        font-size: 2vh;
         margin-bottom: 24px;
     }
 
     .btn {
         min-width: 44px;
-        font-size: 16px;
+        font-size: 2vh;
         font-weight: bold;
         color: black;
         font-family: 'Lato', sans-serif;

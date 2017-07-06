@@ -2,18 +2,24 @@ html {
   background-color: #414244;
   font: 100% Helvetica, sans-serif;
   color: #ededed; }
+  html h1 {
+    font-size: 4vh; }
+  html p {
+    font-size: 2vh; }
   html #main {
     text-align: center; }
   html #result {
     font-weight: bold;
     border: 2px solid #52A1FE;
-    margin: 0 25%; }
+    margin: 0 20%; }
+    html #result p {
+      font-size: 2vh; }
   html input {
-    font-size: 16px;
+    font-size: 2vh;
     margin-bottom: 24px; }
   html .btn {
     min-width: 44px;
-    font-size: 16px;
+    font-size: 2vh;
     font-weight: bold;
     color: black;
     font-family: 'Lato', sans-serif;
