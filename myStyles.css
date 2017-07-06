@@ -11,11 +11,12 @@ html {
   html #result {
     font-weight: bold;
     border: 2px solid #52A1FE;
-    margin: 0 20%; }
+    margin: 2vh 20%; }
     html #result p {
       font-size: 2vh; }
   html input {
     font-size: 2vh;
+    text-align: center;
     margin-bottom: 24px; }
   html .btn {
     min-width: 44px;
@@ -26,7 +27,6 @@ html {
     cursor: pointer;
     padding: 7px 2%;
     border-radius: 5px;
-    margin-left: 6px;
     color: black;
     text-decoration: none;
     background-color: #ededed;
