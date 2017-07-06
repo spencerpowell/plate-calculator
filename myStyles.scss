@@ -1,0 +1,48 @@
+$eden: #13535E;
+$abbey: #414244;
+$backgroundColor: $abbey;
+
+$gallery: #ededed;
+$dustyGray: #A6A0A0;
+
+$dodgerBlue: #52A1FE;
+
+$fontColor: $gallery;
+$fontStack: Helvetica, sans-serif;
+
+html {
+    background-color: $backgroundColor;
+    font: 100% $fontStack;
+    color: $fontColor;
+
+    #main {
+        text-align: center;
+    }
+
+    #result {
+        font-weight: bold;
+        border: 2px solid $dodgerBlue;
+        margin: 0 25%;
+    }
+
+    input {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+
+    .btn {
+        min-width: 44px;
+        font-size: 16px;
+        font-weight: bold;
+        color: black;
+        font-family: 'Lato', sans-serif;
+        cursor: pointer;
+        padding: 7px 2%;
+        border-radius: 5px;
+        margin-left: 6px;
+        color: black;
+        text-decoration: none;
+        background-color: $gallery;
+        border: 2px solid $dustyGray;
+    }
+}
