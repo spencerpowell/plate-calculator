@@ -9,13 +9,8 @@ $('#calculate').click(function() {
         alert("The weight you enter must be divisible by 5!")
     } else {
         $('#result').remove();
-        console.log(enteredWeight);
         var totalPlateWeight = enteredWeight - barWeight;
-        console.log(totalPlateWeight);
-        var results = getPlateResults(totalPlateWeight);
-        console.log(results);
-        console.log(outputList(results));
-        renderOutput(outputList(results));
+        renderOutput(outputList(getPlateResults(totalPlateWeight)));
     }
 })
 
@@ -35,11 +30,7 @@ function getPlateResults(remainingPlateWeight, index = 0, accumulatedArray = [])
 }
 
 var outputList = function(plateResults) {
-    console.log("plateResults: " + plateResults);
     return plateResults.reduce(function(resultArray, plateNumber, index) {
-        console.log("index: " + index);
-        console.log("plateNumber: " + plateNumber);
-        console.log("resultArray: " + resultArray);
         if (plateNumber > 0) {
             return resultArray.concat(plateStringArray[index] + "'s -- " + plateNumber.toString() + " on each side");
         } else {
@@ -51,7 +42,6 @@ var outputList = function(plateResults) {
 var renderOutput = function(outputList) {
     $("#main").append("<div id='result'></div>");
     $.each(outputList, function(index, value) {
-        console.log("Value: " + value);
         if (value != "") {
             var p = "<p>";
             $('#result').append(p.concat(value))
