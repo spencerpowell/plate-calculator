@@ -30,27 +30,27 @@ html {
     #result {
         font-weight: bold;
         border: 2px solid $dodgerBlue;
-        margin: 2vh 20%;
+        margin: 3vh 20%;
 
         p {
-            font-size: 2vh;
+            font-size: 3vw;
         }
     }
 
     input {
-        font-size: 2vh;
+        font-size: 3vh;
         text-align: center;
-        margin-bottom: 24px;
+        margin-bottom: 3vh;
     }
 
     .btn {
         min-width: 44px;
-        font-size: 2vh;
+        font-size: 3vh;
         font-weight: bold;
         color: black;
         font-family: 'Lato', sans-serif;
         cursor: pointer;
-        padding: 7px 2%;
+        padding: 1vh 4vh;
         border-radius: 5px;
         color: black;
         text-decoration: none;
