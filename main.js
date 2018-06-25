@@ -30,11 +30,11 @@ var getPlateResults = function(remainingPlateWeight, index = 0, accumulatedArray
 }
 
 var outputList = function(plateResults) {
-    return plateResults.reduce(function(resultArray, plateNumber, index) {
-        if (plateNumber > 0) {
-            return resultArray.concat(plateStringArray[index] + "'s -- " + plateNumber.toString() + " on each side");
+    return plateResults.reduce(function(outputList, numberOfPlates, index) {
+        if (numberOfPlates > 0) {
+            return outputList.concat(plateStringArray[index] + "'s -- " + numberOfPlates.toString() + " on each side");
         } else {
-            return resultArray.concat("");
+            return outputList.concat("");
         }
   }, []);
 }
