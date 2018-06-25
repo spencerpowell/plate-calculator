@@ -15,7 +15,7 @@ $('#calculate').click(function() {
 })
 
 // returns an array of ints
-function getPlateResults(remainingPlateWeight, index = 0, accumulatedArray = []) {
+var getPlateResults = function(remainingPlateWeight, index = 0, accumulatedArray = []) {
     if (remainingPlateWeight === 0) {
         return accumulatedArray;
     }
