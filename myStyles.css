@@ -8,6 +8,14 @@ html {
     font-size: 2vh; }
   html #main {
     text-align: center; }
+    html #main #barbell {
+      display: block;
+      margin: auto; }
+      html #main #barbell rect {
+        fill: #ededed;
+        text-align: center; }
+      html #main #barbell text {
+        fill: #414244; }
   html #result {
     font-weight: bold;
     border: 2px solid #52A1FE;
@@ -18,18 +26,5 @@ html {
     font-size: 3vh;
     text-align: center;
     margin-bottom: 3vh; }
-  html .btn {
-    min-width: 44px;
-    font-size: 3vh;
-    font-weight: bold;
-    color: black;
-    font-family: 'Lato', sans-serif;
-    cursor: pointer;
-    padding: 1vh 4vh;
-    border-radius: 5px;
-    color: black;
-    text-decoration: none;
-    background-color: #ededed;
-    border: 2px solid #A6A0A0; }
 
 /*# sourceMappingURL=myStyles.css.map */

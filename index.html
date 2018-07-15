@@ -5,15 +5,22 @@
     <title>Plate Calculator</title>
     <link rel="stylesheet" type="text/css" href="myStyles.css">
     <script src="jquery-3.2.1.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
   </head>
   <body>
     <div id="main">
         <h1>Plate Calculator</h1>
         <p>Enter the total weight you are trying to lift</p>
         <div>
-            <input id="weight" />
+          <input id="weight" />
         </div>
-        <a href="#" id="calculate" class="btn">Calculate</a>
+        <div id="errorMsg">
+          <p id="errorText"></p>
+        </div>
+        <div>
+          <svg id="barbell" width="900" height="100">
+          </svg>
+        </div>
     </div>
     <script src="main.js"></script>
   </body>
