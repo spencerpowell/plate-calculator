@@ -8,6 +8,8 @@ $('#weight').keyup(function() {
         $('#errorText').text("The weight you enter must be divisible by 5!");
     } else if (enteredWeight > 900) {
         $('#errorText').text("Woah don't hurt yourself!  The entered weight cannot exceed 900 pounds");
+    } else if (enteredWeight < 45) {
+        $('#errorText').text("The weight you enter must be at least 45 pounds!");
     } else {
         $('#errorText').text("");
         $('#result').remove();
