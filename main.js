@@ -1,7 +1,7 @@
 const svgWidth = parseFloat(d3.select('#barbell').style('width'));
 const svgHeight = parseFloat(d3.select('#barbell').style('height'));
 const barWidth = 420;
-const barHeight = 30;
+const barHeight = 20;
 const barX = parseInt((svgWidth - barWidth) / 2);
 const barY = parseInt(svgHeight / 2) - parseInt(barHeight / 2);
 
