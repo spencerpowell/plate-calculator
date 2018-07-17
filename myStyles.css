@@ -12,10 +12,10 @@ html {
       display: block;
       margin: auto; }
       html #main #barbell rect {
-        fill: #ededed;
-        text-align: center; }
+        fill: #ededed; }
       html #main #barbell text {
-        fill: #414244; }
+        fill: #414244;
+        font-size: 32px; }
   html #result {
     font-weight: bold;
     border: 2px solid #52A1FE;
