@@ -14,8 +14,7 @@ html {
       html #main #barbell rect {
         fill: #ededed; }
       html #main #barbell text {
-        fill: #414244;
-        font-size: 32px; }
+        fill: #414244; }
   html #result {
     font-weight: bold;
     border: 2px solid #52A1FE;

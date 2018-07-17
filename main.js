@@ -1,10 +1,3 @@
-const svgWidth = parseFloat(d3.select('#barbell').style('width'));
-const svgHeight = parseFloat(d3.select('#barbell').style('height'));
-const barWidth = 420;
-const barHeight = 20;
-const barX = parseInt((svgWidth - barWidth) / 2);
-const barY = parseInt(svgHeight / 2) - parseInt(barHeight / 2);
-
 $('#weight').keyup(function() {
     const barWeight = 45;
     const enteredWeight = $('#weight').val();
@@ -22,8 +15,7 @@ $('#weight').keyup(function() {
         $('#errorText').text("");
 
         const totalPlateWeight = enteredWeight - barWeight;
-        renderBar(barX, barY, barWidth, barHeight);
-        renderPlates(getPlateResults(totalPlateWeight));
+        renderBarAndPlates(getPlateResults(totalPlateWeight));
     }
 })
 
@@ -42,16 +34,25 @@ const getPlateResults = function(remainingPlateWeight, index = 0, accumulatedArr
     );
 }
 
-const renderPlates = function(plateResults) {
-    const plateWidth = 45;
+const renderBarAndPlates = function(plateResults) {
+    const svgWidth = parseFloat(d3.select('#barbell').style('width'));
+    const svgHeight = parseFloat(d3.select('#barbell').style('height'));
+    const barWidth = parseInt(svgWidth / 3);
+    const barHeight = parseInt(svgHeight / 9);
+    const barX = parseInt((svgWidth - barWidth) / 2);
+    const barY = parseInt(svgHeight / 2) - parseInt(barHeight / 2);
+
+    renderBar(barX, barY, barWidth, barHeight);
+
+    const plateWidth = parseInt(svgWidth / 22);
     const plateSpacing = parseInt(plateWidth / 5);
-    const plateHeightDecrement = 20;
+    const plateHeightDecrement = parseInt(svgHeight / 7);
     const initialLeftPlateX = barX - (plateWidth + plateSpacing);
     const initialRightPlateX = barX + barWidth + plateSpacing;
     const initialPlateY = 0;
     const initialPlateHeight = svgHeight;
     const verticalTextSpacing = 10;
-    const horizontalTextSpacing = 4;
+    const horizontalTextSpacing = parseInt(plateWidth / 9);
 
     const initialLeftPlateTextX = initialLeftPlateX + horizontalTextSpacing;
     const initialRightPlateTextX = initialRightPlateX + horizontalTextSpacing;
@@ -68,8 +69,10 @@ const renderPlates = function(plateResults) {
             const textIsSingleDigit = plateStringArray[index] === "5";
             const textHasDecimal = plateStringArray[index] === "2.5";
 
-            const extraPaddingIfNeeded = textIsSingleDigit ? 9 : 0;
-            const negativePaddingIfNeeded = textHasDecimal ? -4 : 0;
+            const extraPaddingIfNeeded = textIsSingleDigit ? (parseInt(plateWidth / 5))
+                    : 0;
+            const negativePaddingIfNeeded = textHasDecimal ? - (parseInt(plateWidth / 11))
+                    : 0;
 
             const leftPlateTextX = initialLeftPlateTextX - (numberOfPlates * (plateWidth + plateSpacing)) + extraPaddingIfNeeded + negativePaddingIfNeeded;
             const rightPlateTextX = initialRightPlateTextX + (numberOfPlates * (plateWidth + plateSpacing)) + extraPaddingIfNeeded + negativePaddingIfNeeded;
@@ -78,6 +81,7 @@ const renderPlates = function(plateResults) {
             const plateHeight = initialPlateHeight - (index * plateHeightDecrement);
 
             const plateText = plateStringArray[index];
+            const fontSize = parseInt(plateWidth / 1.5);
 
             d3.select('#barbell')
                 .append("rect")
@@ -90,6 +94,7 @@ const renderPlates = function(plateResults) {
                 .attr("x", leftPlateTextX)
                 .attr("y", plateTextY)
                 .text(plateText)
+                .style("font-size", fontSize)
 
             d3.select('#barbell')
                 .append("rect")
@@ -102,6 +107,7 @@ const renderPlates = function(plateResults) {
                 .attr("x", rightPlateTextX)
                 .attr("y", plateTextY)
                 .text(plateText)
+                .style("font-size", fontSize)
 
             numberOfPlates++;
         }
